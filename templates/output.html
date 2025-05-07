@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="/static/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="theme-toggle">
+            <button id="theme-toggle-btn">
+                <i class="fas fa-moon"></i>
+                <span>Dark Mode</span>
+            </button>
+        </div>
+
+        <h1>Analysis Result</h1>
+
+        {% if error %}
+            <p class="error"><i class="fas fa-exclamation-circle"></i> {{ error }}</p>
+        {% else %}
+            {% if analysis_result %}
+                <h2>Scalar Value</h2>
+                <div class="metrics-card">
+                    <p class="scalar-value">
+                        <i class="fas fa-chart-line"></i> {{ analysis_result }}
+                    </p>
+                </div>
+            {% endif %}
+
+            {% if trend_graph %}
+                <h2>Trend Visualization</h2>
+                <div class="graph-container">
+                    {{ trend_graph|safe }}
+                </div>
+            {% endif %}
+
+            {% if spatial_graph %}
+                <h2>Spatial Visualization</h2>
+                <div class="graph-container">
+                    {{ spatial_graph|safe }}
+                </div>
+            {% endif %}
+
+            {% if explanation %}
+                <h2>Explanation</h2>
+                <div class="explanation">
+                    <p>{{ explanation }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        {% if original_query %}
+            <div class="original-query">
+                <i class="fas fa-search"></i> <strong>Original Query:</strong> {{ original_query }}
+            </div>
+        {% endif %}
+
+        <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Go back to query page</a>
+    </div>
+
+    <script src="/static/output.js"></script>
+</body>
+</html>

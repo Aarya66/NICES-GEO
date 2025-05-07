@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NICES GEO</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="sidebar" id="sidebar">
+    <button id="sidebar-toggle" class="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="sidebar-content">
+        <div class="new-chat">
+            <button id="new-chat-btn"><i class="fas fa-plus"></i> <span class="sidebar-text">New chat</span></button>
+        </div>
+        <div class="recent-header sidebar-text">Recent</div>
+        <div class="search-history" id="search-history">
+            <!-- Search history items will be added here dynamically -->
+        </div>
+        <div class="more-container">
+            <button id="more-btn" class="sidebar-text">More</button>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <button id="theme-toggle" class="theme-button">Dark Theme</button>
+    <div class="container">
+        <div class="logo-container">
+            <img src="/static/nrsc.png" alt="NRSC Logo" class="logo">
+            <h1>NICES GEO</h1>
+            <p class="tagline">Your AI companion for Earth observation and geospatial analysis</p>
+        </div>
+        <form action="/predict" method="POST" id="search-form">
+            <div class="input-container">
+                <input type="text" id="query" name="query" placeholder="Ask NICES GEO" autocomplete="off">
+                <button type="button" id="voice-input-btn" title="Voice input" aria-label="Voice input"><i class="fas fa-microphone"></i></button>
+            </div>
+            <button type="submit">Analyze</button>
+            <p id="processing" class="hidden">Processing query...</p>
+        </form>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

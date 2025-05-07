@@ -1,0 +1,18 @@
+{
+    "water_vapor": "/home/arya/Desktop/2011",
+    "ocean_currents": "/home/arya/Desktop/current_tifs",
+    "locations": {
+        "indian ocean": {
+            "lon_min": 20,
+            "lon_max": 120,
+            "lat_min": -60,
+            "lat_max": 30
+        },
+        "atlantic ocean": {
+            "lon_min": -80,
+            "lon_max": 20,
+            "lat_min": -60,
+            "lat_max": 70
+        }
+    }
+}
